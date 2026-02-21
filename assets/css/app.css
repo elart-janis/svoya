@@ -287,6 +287,7 @@ body::after {
   font-weight: 700;
   backdrop-filter: blur(11px) saturate(145%);
   -webkit-backdrop-filter: blur(11px) saturate(145%);
+  padding-left: 1em;
 }
 
 .board-btn {
@@ -320,8 +321,85 @@ body::after {
   box-shadow: none;
 }
 
+.modal-content {
+  border-radius: 1.2rem;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(239, 246, 255, 0.84));
+  box-shadow: 0 20px 48px rgba(15, 23, 42, 0.3);
+  backdrop-filter: blur(22px) saturate(155%);
+  -webkit-backdrop-filter: blur(22px) saturate(155%);
+}
+
+.modal-header,
+.modal-footer {
+  border-color: rgba(148, 163, 184, 0.28);
+}
+
+.modal-title {
+  color: #123e92;
+  font-weight: 760;
+  letter-spacing: 0.01em;
+}
+
+.modal .form-label {
+  color: #334155;
+  font-weight: 620;
+}
+
+#answer-player-select {
+  border-radius: 0.78rem;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+#answer-player-select:focus {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.16);
+}
+
+#question-text {
+  color: #0f172a;
+}
+
+#answer-wrap {
+  border-radius: 0.9rem;
+  border: 1px solid rgba(148, 163, 184, 0.36) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(241, 245, 249, 0.86));
+  color: #0f172a;
+}
+
+.modal .btn {
+  border-radius: 0.74rem;
+  font-weight: 650;
+  box-shadow: var(--glass-shadow-soft);
+}
+
+.modal .btn-primary {
+  background: linear-gradient(180deg, #2563eb, #1e40af);
+  border-color: rgba(30, 64, 175, 0.72);
+}
+
+.modal .btn-success {
+  background: linear-gradient(180deg, #22c55e, #15803d);
+  border-color: rgba(21, 128, 61, 0.7);
+}
+
+.modal .btn-outline-danger {
+  background: rgba(255, 237, 237, 0.86);
+  border-color: rgba(239, 68, 68, 0.48);
+  color: #b91c1c;
+}
+
+.modal .btn-outline-danger:hover,
+.modal .btn-outline-danger:focus {
+  background: rgba(239, 68, 68, 0.14);
+  border-color: rgba(220, 38, 38, 0.58);
+  color: #991b1b;
+}
+
 @supports not ((backdrop-filter: blur(2px)) or (-webkit-backdrop-filter: blur(2px))) {
   .card,
+  .modal-content,
   .score-dropdown-menu,
   .status-line,
   .board-table .category-cell {
