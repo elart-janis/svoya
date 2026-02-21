@@ -28,8 +28,24 @@
             </div>
 
             <div class="toolbar-block toolbar-controls">
-              <button id="remove-player-btn" class="btn btn-outline-secondary btn-sm" type="button" title="Убрать игрока">-</button>
-              <button id="add-player-btn" class="btn btn-outline-primary btn-sm" type="button" title="Добавить игрока">+</button>
+              <button
+                id="remove-player-btn"
+                class="btn btn-outline-secondary btn-sm"
+                type="button"
+                data-tooltip="Удалить игрока"
+                aria-label="Удалить игрока"
+              >
+                -
+              </button>
+              <button
+                id="add-player-btn"
+                class="btn btn-outline-primary btn-sm"
+                type="button"
+                data-tooltip="Добавить игрока"
+                aria-label="Добавить игрока"
+              >
+                +
+              </button>
               <div class="dropdown" data-bs-auto-close="outside">
                 <button
                   id="players-count"
@@ -37,6 +53,8 @@
                   type="button"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
+                  data-tooltip="Список игроков"
+                  aria-label="Список игроков"
                 >
                   1/15
                 </button>
@@ -45,7 +63,15 @@
                   <div id="players-panel" class="score-list mt-2" aria-live="polite"></div>
                 </div>
               </div>
-              <button id="reset-game-btn" class="btn btn-outline-danger btn-sm" type="button">Сбросить</button>
+              <button
+                id="reset-game-btn"
+                class="btn btn-outline-danger btn-sm"
+                type="button"
+                data-tooltip="Сбросить игру"
+                aria-label="Сбросить игру"
+              >
+                <span class="reset-icon" aria-hidden="true">↺</span>
+              </button>
             </div>
           </div>
         </div>

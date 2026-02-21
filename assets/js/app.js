@@ -18,6 +18,7 @@ let gameData = null;
 let state = null;
 let questionModal = null;
 let activeQuestion = null;
+let tooltips = [];
 
 const modalRefs = {
   root: null,
@@ -30,6 +31,32 @@ const modalRefs = {
   correctButton: null,
   wrongButton: null,
 };
+
+function initToolbarTooltips() {
+  if (!window.bootstrap?.Tooltip) {
+    return;
+  }
+
+  for (const tooltip of tooltips) {
+    tooltip.dispose();
+  }
+  tooltips = [];
+
+  const tooltipTargets = document.querySelectorAll("[data-tooltip]");
+  for (const element of tooltipTargets) {
+    const tooltipText = element.getAttribute("data-tooltip");
+    if (!tooltipText) {
+      continue;
+    }
+    element.setAttribute("data-bs-title", tooltipText);
+    const tooltip = new window.bootstrap.Tooltip(element, {
+      placement: "bottom",
+      trigger: "hover focus",
+      container: "body",
+    });
+    tooltips.push(tooltip);
+  }
+}
 
 function updatePlayersCounter() {
   const counter = document.getElementById("players-count");
@@ -434,6 +461,7 @@ async function init() {
   bindPlayerControls();
   bindModalControls();
   bindBoardControls();
+  initToolbarTooltips();
   renderState();
   showStatus("Загрузка данных игры...", "info");
 
